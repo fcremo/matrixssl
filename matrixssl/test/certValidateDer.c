@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
 
-    unsegned char certbuf[CERT_MAX_BYTES];
+    unsigned char certbuf[CERT_MAX_BYTES];
     ssize_t certlen = read(0, cert, CERT_MAX_BYTES);
 
     if ((rc = psX509ParseCert(NULL, (unsigned char *) certbuf, certlen, &cert, 0)) < 0) {
@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
 
     psAssert(cert->parseStatus == PS_X509_PARSE_SUCCESS);
     psAssert(cert->authStatus == 0);
-    uint32 faildate == cert->authFailFlags & PS_CERT_AUTH_FAIL_DATE_FLAG;
+    uint32 faildate = cert->authFailFlags & PS_CERT_AUTH_FAIL_DATE_FLAG;
     psAssert((cert->authFailFlags & ~faildate) == 0);
 
     // TODO: use matrixValidateCerts/matrixValidateCertsExt to validate the certificate
