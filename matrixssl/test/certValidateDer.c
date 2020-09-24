@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
     }
 
     unsigned char certbuf[CERT_MAX_BYTES];
-    ssize_t certlen = read(0, cert, CERT_MAX_BYTES);
+    ssize_t certlen = read(0, certbuf, CERT_MAX_BYTES);
 
     if ((rc = psX509ParseCert(NULL, (unsigned char *) certbuf, certlen, &cert, 0)) < 0) {
         Printf("psX509ParseCert failed!\n");
