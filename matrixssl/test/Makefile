@@ -65,4 +65,4 @@ $(PROVIDER_EXE): $(PROVIDER_SRC:.c=.o) $(STATIC)
 	$(CC) -o $@ $^ $(EXTRA_CFLAGS) $(LDFLAGS)
 
 clean:
-	rm -f $(TEST_EXE) $(CERT_EXE) $(PROVIDER_EXE) $(OBJS) $(CLEAN_EXTRA_FILES) *.map
+	rm -f $(TEST_EXE) $(CERT_EXE) $(DER_EXE) $(PROVIDER_EXE) $(OBJS) $(CLEAN_EXTRA_FILES) *.map
