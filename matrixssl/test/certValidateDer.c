@@ -40,6 +40,7 @@ void handleParseStatus(parse_status_e parseStatus) {
             return;
         }
     }
+    Printf("Status: unknown error\n");
 }
 
 int main(int argc, char** argv) {
