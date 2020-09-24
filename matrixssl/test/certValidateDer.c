@@ -64,6 +64,7 @@ int main(int argc, char** argv) {
         }
         handleParseStatus(cert->parseStatus);
         psX509FreeCert(cert);
+        return -1;
     }
 
     psAssert(cert->parseStatus == PS_X509_PARSE_SUCCESS);
