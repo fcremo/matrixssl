@@ -47,7 +47,7 @@ endif
 
 all: compile
 
-compile: $(OBJS) $(CERT_EXE) $(TEST_EXE)
+compile: $(OBJS) $(CERT_EXE) $(DER_EXE) $(TEST_EXE)
 
 # Additional Dependencies
 $(OBJS): $(MATRIXSSL_ROOT)/common.mk Makefile $(wildcard *.h)
