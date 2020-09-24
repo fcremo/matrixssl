@@ -41,7 +41,7 @@
 /**
     Define to enable psTrace*Crypto APIs for debugging the crypto module.
  */
-/* #define USE_CRYPTO_TRACE */
+#define USE_CRYPTO_TRACE 
 
 #  ifdef DEBUG
 /* #define CRYPTO_ASSERT     *//**< Extra sanity asserts */
