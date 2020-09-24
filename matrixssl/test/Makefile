@@ -7,8 +7,9 @@
 MATRIXSSL_ROOT:=../..
 TEST_SRC:=sslTest.c
 CERT_SRC:=certValidate.c
+DER_SRC:=certValidateDer.c
 PROVIDER_SRC:=provider.c
-SRC:=$(TEST_SRC) $(CERT_SRC) $(PROVIDER_SRC)
+SRC:=$(TEST_SRC) $(CERT_SRC) $(PROVIDER_SRC) $(DER_SRC)
 
 # Linked files
 STATIC:=../libssl_s.a $(MATRIXSSL_ROOT)/crypto/libcrypt_s.a $(MATRIXSSL_ROOT)/core/libcore_s.a
@@ -24,6 +25,7 @@ STATIC+=$(LIBDRIVER_VAL_UP_PATH)
 
 # Generated files
 CERT_EXE:=certValidate$(E)
+DER_EXE:=certValidateDer$(E)
 TEST_EXE:=sslTest$(E)
 PROVIDER_EXE:=provider$(E)
 
@@ -54,6 +56,9 @@ $(TEST_EXE): $(TEST_SRC:.c=.o) $(STATIC)
 	$(CC) -o $@ $^ $(EXTRA_CFLAGS) $(LDFLAGS)
 
 $(CERT_EXE): $(CERT_SRC:.c=.o) $(STATIC)
+	$(CC) -o $@ $^ $(EXTRA_CFLAGS) $(LDFLAGS)
+
+$(DER_EXE): $(DER_SRC:.c=.o) $(STATIC)
 	$(CC) -o $@ $^ $(EXTRA_CFLAGS) $(LDFLAGS)
 
 $(PROVIDER_EXE): $(PROVIDER_SRC:.c=.o) $(STATIC)
